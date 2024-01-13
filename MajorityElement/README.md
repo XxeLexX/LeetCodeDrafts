@@ -1,18 +1,21 @@
-## Getting Started
+Given an array nums of size n, return the majority element.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 
-## Folder Structure
+ 
 
-The workspace contains two folders by default, where:
+Example 1:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Input: nums = [3,2,3]
+Output: 3
+Example 2:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+ 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Constraints:
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+n == nums.length
+1 <= n <= 5 * 104
+-109 <= nums[i] <= 109

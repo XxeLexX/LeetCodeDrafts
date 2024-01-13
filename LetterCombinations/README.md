@@ -1,18 +1,22 @@
-## Getting Started
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 
-## Folder Structure
+Example 1:
 
-The workspace contains two folders by default, where:
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+Example 2:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Input: digits = ""
+Output: []
+Example 3:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Input: digits = "2"
+Output: ["a","b","c"]
+ 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Constraints:
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+0 <= digits.length <= 4
+digits[i] is a digit in the range ['2', '9'].
