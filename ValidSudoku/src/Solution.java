@@ -11,7 +11,7 @@ public class Solution {
      */
     public boolean isValidSudoku(char[][] board) {
         HashSet<Character> checkpoints = new HashSet<>();
-        
+
         // check row
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -40,6 +40,33 @@ public class Solution {
 
         // check 3x3 matrix
         // code beginnt here...
+        int box = 0;
+        while (box < 9) {
+            int startRow = 3 * (box / 3);
+            int startCol = 3 * (box % 3);
+            checkpoints.clear();
+            if (!validMatrix(board, checkpoints, startRow, startCol)) {
+                return false;
+            }
+            System.out.println(box);
+            box++;
+        }
+        
+        return true;
+    }
+    
+    private boolean validMatrix(char[][] matrix, HashSet<Character> checkpoints, int row, int col) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                char num = matrix[row + i][col + j];
+                if (checkpoints.contains(num) && num != '.') {
+                    System.err.println(num + " is repeated at [" + i + "]" + "[" + j + "]");
+                    return false;
+                }
+                checkpoints.add(num);
+            }
+            System.out.print(checkpoints);
+        }
         return true;
     }
 }
