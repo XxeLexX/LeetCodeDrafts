@@ -39,7 +39,6 @@ public class Solution {
         }
 
         // check 3x3 matrix
-        // code beginnt here...
         int box = 0;
         while (box < 9) {
             int startRow = 3 * (box / 3);
@@ -54,7 +53,7 @@ public class Solution {
         
         return true;
     }
-    
+
     private boolean validMatrix(char[][] matrix, HashSet<Character> checkpoints, int row, int col) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
