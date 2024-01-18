@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -40,5 +39,4 @@ public class Solution {
 
         return Arrays.equals(ss, tt);
     }
-
 }
