@@ -20,8 +20,8 @@ public class Solution {
         if (l > r) {
             return null;
         }
-
         // int mid = (l + r) / 2;         // in some cases this may cause oom
+        // keep using the middle values from List as roots under left and right interval
         int mid = l + (r - l) / 2;
         TreeNode root = new TreeNode(nodes.get(mid));
         root.left = helper(nodes, l, mid - 1);
