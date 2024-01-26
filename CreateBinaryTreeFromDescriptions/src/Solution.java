@@ -1,21 +1,42 @@
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class Solution {
     public TreeNode createBinaryTree(int[][] descriptions) {
-        TreeNode root = new TreeNode();
-        if (descriptions == null) {
-            return root;
-        }
+        Map<Integer, TreeNode> map = new HashMap<>();
+        Set<Integer> parent = new HashSet<>();
 
-        // need to find out a way to decide if is root
-        for (int i = 0; i < descriptions.length; i++) {
-            int p = descriptions[i][0];
-            int k = descriptions[i][1];
-            boolean isLeft = descriptions[i][2] == 1 ? true : false;
+        for(int i = 0 ; i < descriptions.length; i++) {
+            TreeNode node = null;
             
+            parent.add(descriptions[i][1]);
+
+            if(map.containsKey(descriptions[i][0])) {
+                node = map.get(descriptions[i][0]);
+                
+            } else {
+                node = new TreeNode(descriptions[i][0]);
+                map.put(descriptions[i][0], node);
+            }
+
+            if( !map.containsKey(descriptions[i][1]) ) {
+                map.put(descriptions[i][1], new TreeNode(descriptions[i][1]));
+            }
+
+            if(descriptions[i][2] == 1) {
+                 node.left = map.get(descriptions[i][1]);
+            } else {
+                node.right = map.get(descriptions[i][1]);
+            }
         }
 
-        return root;
+        for(int node : map.keySet()) {
+            if(!parent.contains(node)) {
+                return map.get(node);
+            }
+        }
+        return null;
     }
 }

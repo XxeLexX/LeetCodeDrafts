@@ -11,4 +11,12 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public void preorderTraversal(TreeNode root) {
+        if (root != null) {
+            System.out.println(root.val);
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+    }
 }
